@@ -5,7 +5,7 @@ Measure distance from one location to another location using addresses found onl
 ## Usage
 
 ```bash
-python /home/runner/work/Dragon/Dragon/distance.py "New York, NY" "Boston, MA"
+python distance.py "New York, NY" "Boston, MA"
 ```
 
 Example output:
