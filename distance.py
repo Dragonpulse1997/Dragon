@@ -24,7 +24,7 @@ def geocode_address(address: str) -> tuple[float, float]:
     params = urllib.parse.urlencode({"q": address, "format": "json", "limit": 1})
     request = urllib.request.Request(
         f"{NOMINATIM_SEARCH_URL}?{params}",
-        headers={"User-Agent": "DragonDistance/1.0 (https://github.com/Dragonpulse1997/Dragon)"},
+        headers={"User-Agent": "DragonDistance/1.0 (https://github.com/Dragonpulse1997/Dragon/issues)"},
     )
 
     try:
