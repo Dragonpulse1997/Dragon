@@ -11,6 +11,7 @@ import urllib.request
 
 EARTH_RADIUS_KM = 6371.0
 NOMINATIM_SEARCH_URL = "https://nominatim.openstreetmap.org/search"
+USER_AGENT = "DragonDistance/1.0 (Dragon project Nominatim client)"
 
 
 class AddressLookupError(RuntimeError):
@@ -24,7 +25,7 @@ def geocode_address(address: str) -> tuple[float, float]:
     params = urllib.parse.urlencode({"q": address, "format": "json", "limit": 1})
     request = urllib.request.Request(
         f"{NOMINATIM_SEARCH_URL}?{params}",
-        headers={"User-Agent": "DragonDistance/1.0 (https://github.com/Dragonpulse1997/Dragon/issues)"},
+        headers={"User-Agent": USER_AGENT},
     )
 
     try:

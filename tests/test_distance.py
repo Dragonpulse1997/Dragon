@@ -26,7 +26,7 @@ class DistanceTests(unittest.TestCase):
 
         request = mock_urlopen.call_args.args[0]
         request_headers = {key.lower(): value for key, value in request.header_items()}
-        self.assertIn("DragonDistance/1.0", request_headers["user-agent"])
+        self.assertEqual(request_headers["user-agent"], distance.USER_AGENT)
         query_params = urllib.parse.parse_qs(urllib.parse.urlparse(request.full_url).query)
         self.assertEqual(query_params["q"], ["test"])
         self.assertEqual(query_params["format"], ["json"])
